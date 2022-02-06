@@ -21,3 +21,4 @@ This application is used to save tasks to be performed over a standard workday.
 
 ## Screenshot
 
+![screenshot of application about my page](./images/screencapture-Work-Day-Scheduler.png)
