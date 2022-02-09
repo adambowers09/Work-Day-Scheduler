@@ -15,7 +15,7 @@ $(".saveBtn").on("click", function() {
     var time = $(this).parent().attr("id");
 
     localStorage.setItem(time, text);
-});
+
 
 $("#8 .description").val(localStorage.getItem("8"));
 $("#9 .description").val(localStorage.getItem("9"));
@@ -28,3 +28,27 @@ $("#15 .description").val(localStorage.getItem("15"));
 $("#16 .description").val(localStorage.getItem("16"));
 $("#17 .description").val(localStorage.getItem("17"));
 
+});
+
+
+var currentTime = new Date();
+
+var hours = currentTime.getHours();
+
+$(".time-block").each(function () {
+    var time = parseInt($(this).attr("id"))
+  
+    if (time === hours) {
+      $(this).addClass("present");
+      $(this).removeClass("past");
+      $(this).removeClass("future");
+    } else if (time < hours) {
+      $(this).addClass("past");
+      $(this).removeClass("present");
+      $(this).removeClass("future");
+    } else {
+      $(this).addClass("future");
+      $(this).removeClass("present");
+      $(this).removeClass("past");
+    }
+  });
